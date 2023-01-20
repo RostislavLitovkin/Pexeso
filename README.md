@@ -1,3 +1,18 @@
+# Návod:
+
+Jak spustit lokálně na počítači:
+```
+npm i
+npm start
+```
+
+Jak publishnout změny:
+```
+npm run deploy
+```
+- !! změny se promítnou až po pár minutách
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
