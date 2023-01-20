@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
+import { useParams, useSearchParams } from 'react-router-dom';
 import styled from 'styled-components';
+import { BG } from './constants/colors';
 import { CoverImage } from './CoverImage';
 import { PieceState } from './types/PieceState';
 
@@ -13,7 +15,7 @@ const GameLayout = styled('div')`
     grid-template-rows: auto;
     column-gap: 20px;
     row-gap: 20px;
-    background-color: #222;
+    background-color: ${BG};
     height: 100vh;
     width: 75vw;
     justify-content: center;
@@ -33,7 +35,7 @@ const PexesoPiece = styled('div')`
 const PexesoPieceImage = styled('img')`
     width: min(16.6vh, 10vw);
     height: min(16.6vh, 10vw);
-    background-color: #222;
+    background-color: ${BG};
     border-radius: 1.5vw;
     object-fit: cover;
     
@@ -69,7 +71,7 @@ const PlayerBorder = styled('div')`
 const Player = styled('div')`
     height: 16vw;
     width: 16vw;
-    background-color: #222;
+    background-color: ${BG};
     margin: 20px;
     border-radius: 2vw;
 
@@ -107,7 +109,17 @@ border-radius: 2vw;
     width: 18vw;
 */
 
-export const Game: React.FC<{ pieces: number }> = ({ pieces }) => {
+type Params = {
+    name: string,
+	pieces: number,
+};
+
+export const Game: React.FC = () => {
+    const [params] = useSearchParams()
+    const tempPieces = params.get("pieces")
+    const pieces: number = parseInt(tempPieces ? tempPieces : "0")
+    const name = params.get("name")
+    
     const [activePlayer, setActivePlayer] = useState<number>(1)
     const [stateArray, setStateArray] = useState<PieceState[]>()
     const [piecesArray, setPiecesArray] = useState<JSX.Element[]>()
@@ -227,7 +239,7 @@ export const Game: React.FC<{ pieces: number }> = ({ pieces }) => {
                     <PexesoPieceImage
                         key={i}
                         hidden={stateArray?.at(i) === PieceState.HIDDEN}
-                        src={require(`./assets/p${piecesNumberArray?.at(i)}.png`)}
+                        src={require(`./assets/${name}${piecesNumberArray?.at(i)}.png`)}
                     />
 
                     <PexesoHiddenSide hidden={stateArray?.at(i) !== PieceState.HIDDEN}>{i + 1}</PexesoHiddenSide>

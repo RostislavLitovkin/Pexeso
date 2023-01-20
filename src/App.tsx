@@ -1,6 +1,9 @@
 import React from 'react';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
 import { Game } from './Game';
+import { Menu } from './Menu';
+import { Setup } from './Setup';
 
 const BackgroundLayout = styled('div')`
   display: flex;
@@ -13,7 +16,13 @@ const BackgroundLayout = styled('div')`
 function App() {
   return (
     <BackgroundLayout>
-      <Game pieces={10}/>
+      <HashRouter>
+            <Routes>
+                <Route path="/" element={<Menu />} />
+                <Route path="/Game" element={<Game />} />
+                <Route path="/Setup" element={<Setup />} />
+            </Routes>
+        </HashRouter>
     </BackgroundLayout>
   );
 }
