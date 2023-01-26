@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Základy",
+        "texts": [
+            ["Vodík", "H"],
+            ["Uhlík", "C"],
+            ["Chlorovodík", "HCl"],
+            ["nazev4", "vrozec4"],
+            ["nazev5", "vrozec5"]
+        ]
+    },
+    {
+        "name": "Test",
+        "texts": [
+            ["A", "A"],
+            ["B", "B"],
+            ["C", "C"]
+        ]
+    }
+]

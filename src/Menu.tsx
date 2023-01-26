@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { BG } from "./constants/colors";
+import textsJson from './assets/texts.json';
 
 const BlackBackdrop = styled('div')`
     position: absolute;
@@ -8,15 +9,18 @@ const BlackBackdrop = styled('div')`
     width: 100vw;
     background-color: #0008;
     
-    display: flex;
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(5px);
+    overflow: scroll;
 `
 
 const Layout = styled('div')`
     width: 80vw;
-    height: 80vh;
+    min-height: 80vh;
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom: 80px;
     border-radius: 1.5vw;
     background-color: ${BG};
 
@@ -35,6 +39,7 @@ const Button = styled('a')`
     font-size: 2vw;
     text-shadow: 0px 0px 8px #000;
     text-decoration: none;
+    margin-bottom: 10px;
 `
 
 const Title = styled('a')`
@@ -54,13 +59,17 @@ export const Menu: React.FC = () => {
     return (
         <BlackBackdrop>
             <Layout>
+                <br></br>
                 <Title>
                     Chemické pexeso
                 </Title>
                 <br></br>
-                <Button href="/Pexeso/#/Game?pieces=10&name=p">
-                    Hrát
-                </Button>
+                {
+                    textsJson.map((item, index) => <Button href={`/#/Game?variation=${index}`}>
+                        {item.name}
+                    </Button>)
+                }
+                <br></br>
             </Layout>
         </BlackBackdrop>
     )

@@ -2,6 +2,7 @@ import React from 'react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
 import { Game } from './Game';
+import { GameWithText } from './GameWithText';
 import { Menu } from './Menu';
 import { Setup } from './Setup';
 
@@ -19,7 +20,7 @@ function App() {
       <HashRouter>
             <Routes>
                 <Route path="/" element={<Menu />} />
-                <Route path="/Game" element={<Game />} />
+                <Route path="/Game" element={<GameWithText />} />
                 <Route path="/Setup" element={<Setup />} />
             </Routes>
         </HashRouter>

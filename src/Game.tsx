@@ -3,7 +3,7 @@ import { useParams, useSearchParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { BG } from './constants/colors';
 import { CoverImage } from './CoverImage';
-import { PieceState } from './types/PieceState';
+import { PieceState } from './types/PieceState'
 
 const Layout = styled('div')`
     display: flex;

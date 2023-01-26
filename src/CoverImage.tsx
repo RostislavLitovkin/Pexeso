@@ -1,7 +1,7 @@
 import { MouseEventHandler } from "react"
 import styled from "styled-components"
 
-const BlackBackdrop = styled('div')`
+export const BlackBackdrop = styled('div')`
     position: absolute;
     height: 100vh;
     width: 100vw;
@@ -11,6 +11,10 @@ const BlackBackdrop = styled('div')`
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(5px);
+
+    color: white;
+    font-size: 5vw;
+    font-weight: 900;
 `
 
 const Image = styled('img')`

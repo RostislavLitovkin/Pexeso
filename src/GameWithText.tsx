@@ -2,8 +2,9 @@ import { useCallback, useEffect, useState } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { BG } from './constants/colors';
-import { CoverImage } from './CoverImage';
+import { BlackBackdrop, CoverImage } from './CoverImage';
 import { PieceState } from './types/PieceState';
+import textsJson from './assets/texts.json';
 
 const Layout = styled('div')`
     display: flex;
@@ -32,15 +33,22 @@ const PexesoPiece = styled('div')`
     align-items: center;
 `
 
-const PexesoPieceText = styled('p')`
+const PexesoPieceText = styled('div')`
     width: min(16.6vh, 10vw);
     height: min(16.6vh, 10vw);
     background-color: ${BG};
     border-radius: 1.5vw;
     object-fit: cover;
-    color: white;
     
-    
+`
+
+const Text = styled('div')`
+width: min(16.6vh, 10vw);
+height: min(16.6vh, 10vw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: White;
 `
 
 const PexesoHiddenSide = styled('div')`
@@ -112,20 +120,20 @@ border-radius: 2vw;
 */
 
 type Params = {
-    name: string,
-	pieces: number,
+    variation: number,
 };
 
-export const Game: React.FC = () => {
+export const GameWithText: React.FC = () => {
     const [params] = useSearchParams()
-    const tempPieces = params.get("pieces")
-    const pieces: number = parseInt(tempPieces ? tempPieces : "0")
-    const name = params.get("name")
+    const variation = parseInt(params.get("variation") || "0") || 0
+    const pieces: number = textsJson.at(variation)?.texts.length || 0;
     
     const [activePlayer, setActivePlayer] = useState<number>(1)
     const [stateArray, setStateArray] = useState<PieceState[]>()
     const [piecesArray, setPiecesArray] = useState<JSX.Element[]>()
-    const [piecesNumberArray, setPiecesNumberArray] = useState<number[]>()
+    const [piecesNumberArray, setPiecesNumberArray] = useState<any[]>()
+    const [piecesTextArray, setPiecesTextArray] = useState<any[]>()
+
 
     const [score1, setScore1] = useState<number>(0)
     const [score2, setScore2] = useState<number>(0)
@@ -136,7 +144,7 @@ export const Game: React.FC = () => {
 
     const [showHideButton, setShowHideButton] = useState<boolean>(false)
 
-    const [coverImageNum, setCoverImageNum] = useState<number>(0)
+    const [coverText, setCoverText] = useState<string>("")
     const [hideCoverImage, setHideCoverImage] = useState<boolean>(true)
 
 
@@ -146,7 +154,7 @@ export const Game: React.FC = () => {
         setStateArray(stateArray.concat())
     }, [stateArray])
 
-    const shuffle = useCallback((array: number[]) => {
+    const shuffle = useCallback((array: number[], textArray: string[]) => {
         let currentIndex = array.length, randomIndex;
 
         // While there remain elements to shuffle.
@@ -159,9 +167,13 @@ export const Game: React.FC = () => {
             // And swap it with the current element.
             [array[currentIndex], array[randomIndex]] = [
                 array[randomIndex], array[currentIndex]];
+
+            [textArray[currentIndex], textArray[randomIndex]] = [
+                textArray[randomIndex], textArray[currentIndex]];
         }
 
-        return array;
+        const result: [number[], string[]] = [array, textArray]
+        return result;
 
         // Method found: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
     }, [])
@@ -169,6 +181,8 @@ export const Game: React.FC = () => {
     // initial state
     useEffect(() => {
         const tempPiecesNumberArray: number[] = []
+        const tempPiecesTextArray: string[] = []
+
         const tempStateArray: PieceState[] = []
         for (let i = 0; i < pieces; i++) {
             // needs to be twice, for both pieces in the pair
@@ -176,9 +190,13 @@ export const Game: React.FC = () => {
             tempStateArray.push(PieceState.HIDDEN)
             tempPiecesNumberArray.push(i)
             tempPiecesNumberArray.push(i)
+            tempPiecesTextArray.push(textsJson.at(variation)?.texts.at(i)?.at(1) || "")
+            tempPiecesTextArray.push(textsJson.at(variation)?.texts.at(i)?.at(0) || "")
         }
 
-        setPiecesNumberArray(shuffle(tempPiecesNumberArray))
+        const temp = shuffle(tempPiecesNumberArray, tempPiecesTextArray);
+        setPiecesNumberArray(temp.at(0))
+        setPiecesTextArray(temp.at(1))
 
         setStateArray(tempStateArray)
 
@@ -215,8 +233,8 @@ export const Game: React.FC = () => {
         }
         else if(stateArray?.at(i) !== PieceState.HIDDEN){
             setHideCoverImage(false);
-            const temp = piecesNumberArray?.at(i);
-            if(temp) setCoverImageNum(temp)
+            const temp = piecesTextArray?.at(i);
+            if(temp) setCoverText(temp)
         }
     }, [piecesNumberArray, activePlayer, score1, score2, selectedIndex, selectedPiece, setState, showHideButton, stateArray])
 
@@ -242,9 +260,12 @@ export const Game: React.FC = () => {
                         key={i}
                         hidden={stateArray?.at(i) === PieceState.HIDDEN}
                     >
+                        <Text>
                         {
-                            i
+                            piecesTextArray?.at(i)
                         }
+                        </Text>
+                        
                     </PexesoPieceText>
 
                     <PexesoHiddenSide hidden={stateArray?.at(i) !== PieceState.HIDDEN}>{i + 1}</PexesoHiddenSide>
@@ -288,7 +309,12 @@ export const Game: React.FC = () => {
                     </Player>
                 </PlayerBorder>
             </PlayerLayout>
-            {!hideCoverImage && <CoverImage imageNum={coverImageNum} onClick={() => { setHideCoverImage(true) }}/>}
+            {!hideCoverImage && 
+                <BlackBackdrop onClick={() => { setHideCoverImage(true) }}>
+                {
+                    coverText
+                }
+            </BlackBackdrop>}
         </Layout>
     )
 }
