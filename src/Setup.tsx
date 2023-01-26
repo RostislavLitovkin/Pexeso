@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { BG } from "./constants/colors";
 
@@ -38,18 +38,6 @@ const Button = styled('a')`
     text-decoration: none;
 `
 
-const ImageInput = styled('input')`
-    color: white;
-    font-weight: 900;
-    grid-column-start: 0;
-    grid-column-end: 4;
-    align-content: center;
-    text-align: center;
-    font-size: 2vw;
-    text-shadow: 0px 0px 8px #000;
-    text-decoration: none;
-`
-
 const Title = styled('a')`
     justify-self: start;
     color: red;
@@ -64,7 +52,6 @@ const Title = styled('a')`
 `
 
 export const Setup: React.FC = () => {
-    const [imgFiles, setImgFiles] = useState<FileList>()
     return (
         <BlackBackdrop>
             <Layout>
@@ -78,9 +65,7 @@ export const Setup: React.FC = () => {
                 <br></br>
                 <input type="file" multiple name="Obrázky" accept=".png,.png" onChange={
                     (e) => {
-                        const files = e.target.files
                         console.log(e.target.files)
-                        if (files) setImgFiles(files)
                     }
                 }/>
             </Layout>

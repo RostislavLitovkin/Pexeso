@@ -1,7 +1,6 @@
 import React from 'react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
-import { Game } from './Game';
 import { GameWithText } from './GameWithText';
 import { Menu } from './Menu';
 import { Setup } from './Setup';

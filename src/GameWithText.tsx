@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
-import { useParams, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { BG } from './constants/colors';
-import { BlackBackdrop, CoverImage } from './CoverImage';
+import { BlackBackdrop } from './CoverImage';
 import { PieceState } from './types/PieceState';
 import textsJson from './assets/texts.json';
 
@@ -119,10 +119,6 @@ border-radius: 2vw;
     width: 18vw;
 */
 
-type Params = {
-    variation: number,
-};
-
 export const GameWithText: React.FC = () => {
     const [params] = useSearchParams()
     const variation = parseInt(params.get("variation") || "0") || 0
@@ -200,7 +196,7 @@ export const GameWithText: React.FC = () => {
 
         setStateArray(tempStateArray)
 
-    }, [pieces, shuffle])
+    }, [pieces, shuffle, variation])
 
     const pexesoClicked = useCallback((i: number) => {
         if (stateArray?.at(i) === PieceState.HIDDEN && !showHideButton) {
@@ -236,7 +232,7 @@ export const GameWithText: React.FC = () => {
             const temp = piecesTextArray?.at(i);
             if(temp) setCoverText(temp)
         }
-    }, [piecesNumberArray, activePlayer, score1, score2, selectedIndex, selectedPiece, setState, showHideButton, stateArray])
+    }, [piecesNumberArray, activePlayer, score1, score2, selectedIndex, selectedPiece, setState, showHideButton, stateArray, piecesTextArray])
 
     // updating the pieces on state change
     useEffect(() => {
@@ -273,7 +269,7 @@ export const GameWithText: React.FC = () => {
         }
 
         setPiecesArray(tempPiecesArray)
-    }, [pieces, stateArray, setState, piecesNumberArray, pexesoClicked])
+    }, [pieces, stateArray, setState, piecesNumberArray, pexesoClicked, piecesTextArray])
 
     return (
         <Layout>
