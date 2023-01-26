@@ -65,7 +65,7 @@ export const Menu: React.FC = () => {
                 </Title>
                 <br></br>
                 {
-                    textsJson.map((item, index) => <Button href={`/#/Game?variation=${index}`}>
+                    textsJson.map((item, index) => <Button href={`/Pexeso/#/Game?variation=${index}`}>
                         {item.name}
                     </Button>)
                 }
