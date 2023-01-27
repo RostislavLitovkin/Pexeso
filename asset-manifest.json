@@ -1,9 +1,16 @@
 {
   "files": {
-    "main.css": "/Pexeso/static/css/main.e6c13ad2.css",
-    "main.js": "/Pexeso/static/js/main.9a2ccaeb.js",
+    "main.css": "/Pexeso/static/css/main.c5267821.css",
+    "main.js": "/Pexeso/static/js/main.2e50e2db.js",
     "static/js/787.c1112931.chunk.js": "/Pexeso/static/js/787.c1112931.chunk.js",
     "static/media/p8.png": "/Pexeso/static/media/p8.27f848b2fc60a799b9ff.png",
+    "static/media/Screenshot_2023-01-26_at_14.09.12.png": "/Pexeso/static/media/Screenshot_2023-01-26_at_14.09.12.f2df595f8039289f8773.png",
+    "static/media/Screenshot_2023-01-26_at_14.10.29.png": "/Pexeso/static/media/Screenshot_2023-01-26_at_14.10.29.b31d0f774bc1bdeaab81.png",
+    "static/media/Screenshot_2023-01-26_at_13.53.36.png": "/Pexeso/static/media/Screenshot_2023-01-26_at_13.53.36.dfd180c08950b35a1e90.png",
+    "static/media/Screenshot_2023-01-26_at_13.54.17.png": "/Pexeso/static/media/Screenshot_2023-01-26_at_13.54.17.6442dfc89091df45ae5c.png",
+    "static/media/Screenshot_2023-01-26_at_13.50.32.png": "/Pexeso/static/media/Screenshot_2023-01-26_at_13.50.32.9780bca246dabf79c288.png",
+    "static/media/Screenshot_2023-01-26_at_14.03.49.png": "/Pexeso/static/media/Screenshot_2023-01-26_at_14.03.49.76a1e15aec020b175094.png",
+    "static/media/Screenshot_2023-01-26_at_13.53.21.png": "/Pexeso/static/media/Screenshot_2023-01-26_at_13.53.21.531c76d0659365ca4090.png",
     "static/media/p3.png": "/Pexeso/static/media/p3.f556a23416a0f2fcadac.png",
     "static/media/p4.png": "/Pexeso/static/media/p4.5e69bc440b169bed291b.png",
     "static/media/p1.png": "/Pexeso/static/media/p1.5bdddb7998ca3b1b1778.png",
@@ -13,12 +20,12 @@
     "static/media/p2.png": "/Pexeso/static/media/p2.e0960b8713dbb4f13078.png",
     "static/media/p6.png": "/Pexeso/static/media/p6.e2837fb55f63c3f5405e.png",
     "index.html": "/Pexeso/index.html",
-    "main.e6c13ad2.css.map": "/Pexeso/static/css/main.e6c13ad2.css.map",
-    "main.9a2ccaeb.js.map": "/Pexeso/static/js/main.9a2ccaeb.js.map",
+    "main.c5267821.css.map": "/Pexeso/static/css/main.c5267821.css.map",
+    "main.2e50e2db.js.map": "/Pexeso/static/js/main.2e50e2db.js.map",
     "787.c1112931.chunk.js.map": "/Pexeso/static/js/787.c1112931.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.9a2ccaeb.js"
+    "static/css/main.c5267821.css",
+    "static/js/main.2e50e2db.js"
   ]
 }
