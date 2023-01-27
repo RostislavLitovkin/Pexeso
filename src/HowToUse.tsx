@@ -27,16 +27,19 @@ export const HowToUse = () => {
                         klikněte na <strong>src</strong>, pak <strong>assets</strong> a následně <strong>texts.json</strong></p>
                     <figure id="c435c091-9cba-43b8-b3a5-8b0666dd6a0b" className="image"><a
                         href="HowToUseAssets/Screenshot_2023-01-26_at_13.50.32.png"><img
+                            alt=""
                             style={{ width: "1656px" }}
                             src={require("./HowToUseAssets/Screenshot_2023-01-26_at_13.50.32.png")} /></a>
                     </figure>
                     <figure id="bffd2ea5-b4fc-4140-a1f1-6c008bf68ea3" className="image"><a
                         href="HowToUseAssets/Screenshot_2023-01-26_at_13.53.21.png"><img
+                        alt=""
                             style={{ width: "2224px" }}
                             src={require("./HowToUseAssets/Screenshot_2023-01-26_at_13.53.21.png")} /></a>
                     </figure>
                     <figure id="d41a1a61-fee1-4e26-9f87-b6b619546026" className="image"><a
                         href="HowToUseAssets/Screenshot_2023-01-26_at_13.53.36.png"><img
+                        alt=""
                             style={{ width: "2260px" }}
                             src={require("./HowToUseAssets/Screenshot_2023-01-26_at_13.53.36.png")} /></a>
                     </figure>
@@ -44,6 +47,7 @@ export const HowToUse = () => {
                     </p>
                     <figure id="ad4bc236-0707-4441-9a22-9d6c0f0381f0" className="image"><a
                         href="HowToUseAssets/Screenshot_2023-01-26_at_13.54.17.png"><img
+                        alt=""
                             style={{ width: "2258px" }}
                             src={require("./HowToUseAssets/Screenshot_2023-01-26_at_13.54.17.png")} /></a>
                     </figure>
@@ -52,6 +56,7 @@ export const HowToUse = () => {
                         <strong>commit changes.</strong></p>
                     <figure id="247971e0-ddaa-4a69-8f1c-404282f52921" className="image"><a
                         href="HowToUseAssets/Screenshot_2023-01-26_at_14.03.49.png"><img
+                        alt=""
                             style={{ width: "2188px" }}
                             src={require("./HowToUseAssets/Screenshot_2023-01-26_at_14.03.49.png")} /></a>
                     </figure>
@@ -74,11 +79,13 @@ export const HowToUse = () => {
                     <p id="f4dc0a5e-0869-4a59-9193-3751d635f39e" >Stačí se řídit obrázky:</p>
                     <figure id="90fda20a-dbd4-4bea-af19-27a3231483d9" className="image"><a
                         href="HowToUseAssets/Screenshot_2023-01-26_at_14.09.12.png"><img
+                        alt=""
                             style={{ width: "3024px" }}
                             src={require("./HowToUseAssets/Screenshot_2023-01-26_at_14.09.12.png")} /></a>
                     </figure>
                     <figure id="97c51622-351d-47e6-9efd-83b4e41139fc" className="image"><a
                         href="HowToUseAssets/Screenshot_2023-01-26_at_14.10.29.png"><img
+                        alt=""
                             style={{ width: "3024px" }}
                             src={require("./HowToUseAssets/Screenshot_2023-01-26_at_14.10.29.png")} /></a>
                     </figure>
