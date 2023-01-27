@@ -11,7 +11,7 @@ export const HowToUse = () => {
                     <h1 className="page-title">Chemické pexeso</h1>
                 </header>
                 <div className="page-body">
-                    <p id="dd9dab97-951b-4bbf-867e-e8114d4d3594" >Toto je návod k použití.
+                    <p id="dd9dab97-951b-4bbf-867e-e8114d4d3594" >Toto je návod k použití.&nbsp;
 
                         <strong>Kód je dostupný zde:&nbsp;</strong>
                         <a href="https://github.com/rostislavLitovkin/pexeso">https://github.com/rostislavLitovkin/pexeso</a>
