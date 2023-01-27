@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Pexeso/static/css/main.5b416492.css",
-    "main.js": "/Pexeso/static/js/main.8f4b2f5f.js",
+    "main.css": "/Pexeso/static/css/main.603275e2.css",
+    "main.js": "/Pexeso/static/js/main.b31de822.js",
     "static/js/787.c1112931.chunk.js": "/Pexeso/static/js/787.c1112931.chunk.js",
     "static/media/p8.png": "/Pexeso/static/media/p8.27f848b2fc60a799b9ff.png",
     "static/media/Screenshot_2023-01-26_at_14.09.12.png": "/Pexeso/static/media/Screenshot_2023-01-26_at_14.09.12.f2df595f8039289f8773.png",
@@ -20,12 +20,12 @@
     "static/media/p2.png": "/Pexeso/static/media/p2.e0960b8713dbb4f13078.png",
     "static/media/p6.png": "/Pexeso/static/media/p6.e2837fb55f63c3f5405e.png",
     "index.html": "/Pexeso/index.html",
-    "main.5b416492.css.map": "/Pexeso/static/css/main.5b416492.css.map",
-    "main.8f4b2f5f.js.map": "/Pexeso/static/js/main.8f4b2f5f.js.map",
+    "main.603275e2.css.map": "/Pexeso/static/css/main.603275e2.css.map",
+    "main.b31de822.js.map": "/Pexeso/static/js/main.b31de822.js.map",
     "787.c1112931.chunk.js.map": "/Pexeso/static/js/787.c1112931.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5b416492.css",
-    "static/js/main.8f4b2f5f.js"
+    "static/css/main.603275e2.css",
+    "static/js/main.b31de822.js"
   ]
 }
