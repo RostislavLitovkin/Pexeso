@@ -69,6 +69,9 @@ export const Menu: React.FC = () => {
                         {item.name}
                     </Button>)
                 }
+                <Button href={`/Pexeso/#/HowToUse`} style={{ color: "yellow"}}>
+                    Návod
+                </Button>
                 <br></br>
             </Layout>
         </BlackBackdrop>
