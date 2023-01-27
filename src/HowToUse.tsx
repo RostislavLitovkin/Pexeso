@@ -1,11 +1,9 @@
-
-
 export const HowToUse = () => {
     require("./HowToUse.css")
 
     return (
         <div style={{width: "100vw", backgroundColor: "white" }}>
-            <article id="360b7952-546b-4be1-ac0a-a20e52a7e4f4" className="page sans"
+            <article id="360b7952-546b-4be1-ac0a-a20e52a7e4f4" className="page sans body"
                 style={{ backgroundColor: "white", maxWidth: "800px" }}>
                 <header>
                     <h1 className="page-title">Chemické pexeso</h1>
